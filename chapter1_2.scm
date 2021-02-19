@@ -1,3 +1,5 @@
+(load "chapter1_1.scm")
+
 ;; exercise 1.11
 (define (f n)
   (if (< n 3)
@@ -35,8 +37,13 @@
 	(else (+ (count-change-iter (- amount (first-denomination kinds-of-coins)) kinds-of-coins)
 		 (count-change-iter amount (- kinds-of-coins 1))))))
 
+(define (count-change amount)
+  (count-change-iter amount 5))
+
 (count-change-iter 100 5)
 (count-change-iter 11 5)
+
+(count-change 11)
 
 ;; exercise 1.12
 (define (get-pascal-triangle x y)
@@ -47,3 +54,15 @@
 	))
 
 (get-pascal-triangle 5 3)
+
+;; exercise 1.15
+(define (sine angle)
+  (define (cube x) (* x x x))
+  (define (p x) (- (* 3 x) (* 4 (cube x))))
+  (if (not (> (abs angle) 0.1))
+      angle
+      (p (sine (/ angle 3.0)))))
+
+(sine (/ 3.14 6))
+
+
