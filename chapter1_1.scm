@@ -1,3 +1,4 @@
+(load "common.scm")
 
 ;; exercise 1.3
 ;;
@@ -43,15 +44,6 @@
 
 (abs -1)
 
-;; square
-(define (square x)
-  (* x x))
-
-;; average
-(define (average y x)
-  (/ (+ x y) 2))
-
-(average 2 3)
 
 ;; sqrt
 (define (sqrt y)
